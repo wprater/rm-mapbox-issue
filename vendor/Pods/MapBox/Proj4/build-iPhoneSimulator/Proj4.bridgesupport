@@ -1,0 +1,822 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<struct name='ARG_list' type='{ARG_list=&quot;next&quot;^{ARG_list}&quot;used&quot;c&quot;param&quot;[1c]}'>
+<field declared_type='struct ARG_list*' name='next' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+<field declared_type='char' name='used' type='c'/>
+<field declared_type='char*' name='param' type='[1c]'/>
+</struct>
+<struct name='COMPLEX' type='{_COMPLEX=&quot;r&quot;d&quot;i&quot;d}'>
+<field declared_type='double' name='r' type='d'/>
+<field declared_type='double' name='i' type='d'/>
+</struct>
+<struct name='CTABLE' type='{CTABLE=&quot;id&quot;[80c]&quot;ll&quot;{_projUV=&quot;u&quot;d&quot;v&quot;d}&quot;del&quot;{_projUV=&quot;u&quot;d&quot;v&quot;d}&quot;lim&quot;{_ILP=&quot;lam&quot;i&quot;phi&quot;i}&quot;cvs&quot;^{_FLP=&quot;lam&quot;f&quot;phi&quot;f}}'>
+<field declared_type='char*' name='id' type='[80c]'/>
+<field declared_type='projUV' name='ll' type='{_projUV=&quot;u&quot;d&quot;v&quot;d}'/>
+<field declared_type='projUV' name='del' type='{_projUV=&quot;u&quot;d&quot;v&quot;d}'/>
+<field declared_type='ILP' name='lim' type='{_ILP=&quot;lam&quot;i&quot;phi&quot;i}'/>
+<field declared_type='FLP*' name='cvs' type='^{_FLP=&quot;lam&quot;f&quot;phi&quot;f}'/>
+</struct>
+<struct name='DERIVS' type='{DERIVS=&quot;x_l&quot;d&quot;x_p&quot;d&quot;y_l&quot;d&quot;y_p&quot;d}'>
+<field declared_type='double' name='x_l' type='d'/>
+<field declared_type='double' name='x_p' type='d'/>
+<field declared_type='double' name='y_l' type='d'/>
+<field declared_type='double' name='y_p' type='d'/>
+</struct>
+<struct name='EMESS' type='{EMESS=&quot;File_name&quot;*&quot;Prog_name&quot;*&quot;File_line&quot;i}'>
+<field declared_type='char*' name='File_name' type='*'/>
+<field declared_type='char*' name='Prog_name' type='*'/>
+<field declared_type='int' name='File_line' type='i'/>
+</struct>
+<struct name='FACTORS' type='{FACTORS=&quot;der&quot;{DERIVS=&quot;x_l&quot;d&quot;x_p&quot;d&quot;y_l&quot;d&quot;y_p&quot;d}&quot;h&quot;d&quot;k&quot;d&quot;omega&quot;d&quot;thetap&quot;d&quot;conv&quot;d&quot;s&quot;d&quot;a&quot;d&quot;b&quot;d&quot;code&quot;i}'>
+<field declared_type='struct DERIVS' name='der' type='{DERIVS=&quot;x_l&quot;d&quot;x_p&quot;d&quot;y_l&quot;d&quot;y_p&quot;d}'/>
+<field declared_type='double' name='h' type='d'/>
+<field declared_type='double' name='k' type='d'/>
+<field declared_type='double' name='omega' type='d'/>
+<field declared_type='double' name='thetap' type='d'/>
+<field declared_type='double' name='conv' type='d'/>
+<field declared_type='double' name='s' type='d'/>
+<field declared_type='double' name='a' type='d'/>
+<field declared_type='double' name='b' type='d'/>
+<field declared_type='int' name='code' type='i'/>
+</struct>
+<struct name='FLP' type='{_FLP=&quot;lam&quot;f&quot;phi&quot;f}'>
+<field declared_type='float' name='lam' type='f'/>
+<field declared_type='float' name='phi' type='f'/>
+</struct>
+<struct name='GeocentricInfo' type='{_GeocentricInfo=&quot;Geocent_a&quot;d&quot;Geocent_b&quot;d&quot;Geocent_a2&quot;d&quot;Geocent_b2&quot;d&quot;Geocent_e2&quot;d&quot;Geocent_ep2&quot;d}'>
+<field declared_type='double' name='Geocent_a' type='d'/>
+<field declared_type='double' name='Geocent_b' type='d'/>
+<field declared_type='double' name='Geocent_a2' type='d'/>
+<field declared_type='double' name='Geocent_b2' type='d'/>
+<field declared_type='double' name='Geocent_e2' type='d'/>
+<field declared_type='double' name='Geocent_ep2' type='d'/>
+</struct>
+<struct name='ILP' type='{_ILP=&quot;lam&quot;i&quot;phi&quot;i}'>
+<field declared_type='int' name='lam' type='i'/>
+<field declared_type='int' name='phi' type='i'/>
+</struct>
+<struct name='PJ' type='{PJconsts=&quot;fwd&quot;^?&quot;inv&quot;^?&quot;spc&quot;^?&quot;pfree&quot;^?&quot;descr&quot;*&quot;params&quot;^{ARG_list}&quot;over&quot;i&quot;geoc&quot;i&quot;is_latlong&quot;i&quot;is_geocent&quot;i&quot;a&quot;d&quot;a_orig&quot;d&quot;es&quot;d&quot;es_orig&quot;d&quot;e&quot;d&quot;ra&quot;d&quot;one_es&quot;d&quot;rone_es&quot;d&quot;lam0&quot;d&quot;phi0&quot;d&quot;x0&quot;d&quot;y0&quot;d&quot;k0&quot;d&quot;to_meter&quot;d&quot;fr_meter&quot;d&quot;datum_type&quot;i&quot;datum_params&quot;[7d]&quot;from_greenwich&quot;d&quot;long_wrap_center&quot;d}'>
+<field declared_type='projUV (*)(projUV, struct PJconsts *)' function_pointer='true' name='fwd' type='^?'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='struct PJconsts*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</field>
+<field declared_type='projUV (*)(projUV, struct PJconsts *)' function_pointer='true' name='inv' type='^?'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='struct PJconsts*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</field>
+<field declared_type='void (*)(projUV, struct PJconsts *, struct FACTORS *)' function_pointer='true' name='spc' type='^?'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='struct PJconsts*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<arg declared_type='struct FACTORS*' type='^{FACTORS={DERIVS=dddd}ddddddddi}'/>
+<retval declared_type='void' type='v'/>
+</field>
+<field declared_type='void (*)(struct PJconsts *)' function_pointer='true' name='pfree' type='^?'>
+<arg declared_type='struct PJconsts*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<retval declared_type='void' type='v'/>
+</field>
+<field const='true' declared_type='char*' name='descr' type='*'/>
+<field declared_type='paralist*' name='params' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+<field declared_type='int' name='over' type='i'/>
+<field declared_type='int' name='geoc' type='i'/>
+<field declared_type='int' name='is_latlong' type='i'/>
+<field declared_type='int' name='is_geocent' type='i'/>
+<field declared_type='double' name='a' type='d'/>
+<field declared_type='double' name='a_orig' type='d'/>
+<field declared_type='double' name='es' type='d'/>
+<field declared_type='double' name='es_orig' type='d'/>
+<field declared_type='double' name='e' type='d'/>
+<field declared_type='double' name='ra' type='d'/>
+<field declared_type='double' name='one_es' type='d'/>
+<field declared_type='double' name='rone_es' type='d'/>
+<field declared_type='double' name='lam0' type='d'/>
+<field declared_type='double' name='phi0' type='d'/>
+<field declared_type='double' name='x0' type='d'/>
+<field declared_type='double' name='y0' type='d'/>
+<field declared_type='double' name='k0' type='d'/>
+<field declared_type='double' name='to_meter' type='d'/>
+<field declared_type='double' name='fr_meter' type='d'/>
+<field declared_type='int' name='datum_type' type='i'/>
+<field declared_type='double*' name='datum_params' type='[7d]'/>
+<field declared_type='double' name='from_greenwich' type='d'/>
+<field declared_type='double' name='long_wrap_center' type='d'/>
+</struct>
+<struct name='PJ_DATUMS' type='{PJ_DATUMS=&quot;id&quot;*&quot;defn&quot;*&quot;ellipse_id&quot;*&quot;comments&quot;*}'>
+<field declared_type='char*' name='id' type='*'/>
+<field declared_type='char*' name='defn' type='*'/>
+<field declared_type='char*' name='ellipse_id' type='*'/>
+<field declared_type='char*' name='comments' type='*'/>
+</struct>
+<struct name='PJ_ELLPS' type='{PJ_ELLPS=&quot;id&quot;*&quot;major&quot;*&quot;ell&quot;*&quot;name&quot;*}'>
+<field declared_type='char*' name='id' type='*'/>
+<field declared_type='char*' name='major' type='*'/>
+<field declared_type='char*' name='ell' type='*'/>
+<field declared_type='char*' name='name' type='*'/>
+</struct>
+<struct name='PJ_GRIDINFO' type='{_pj_gi=&quot;gridname&quot;*&quot;filename&quot;*&quot;format&quot;*&quot;grid_offset&quot;i&quot;ct&quot;^{CTABLE}&quot;next&quot;^{_pj_gi}&quot;child&quot;^{_pj_gi}}'>
+<field declared_type='char*' name='gridname' type='*'/>
+<field declared_type='char*' name='filename' type='*'/>
+<field const='true' declared_type='char*' name='format' type='*'/>
+<field declared_type='int' name='grid_offset' type='i'/>
+<field declared_type='struct CTABLE*' name='ct' type='^{CTABLE=[80c]{?=dd}{?=dd}{?=ii}^{?}}'/>
+<field declared_type='struct _pj_gi*' name='next' type='^{_pj_gi=***i^{CTABLE}^{_pj_gi}^{_pj_gi}}'/>
+<field declared_type='struct _pj_gi*' name='child' type='^{_pj_gi=***i^{CTABLE}^{_pj_gi}^{_pj_gi}}'/>
+</struct>
+<struct name='PJ_LIST' type='{PJ_LIST=&quot;id&quot;*&quot;proj&quot;^?&quot;descr&quot;^*}'>
+<field declared_type='char*' name='id' type='*'/>
+<field declared_type='struct PJconsts *(*)(struct PJconsts *)' function_pointer='true' name='proj' type='^?'>
+<arg declared_type='struct PJconsts*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<retval declared_type='struct PJconsts*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+</field>
+<field const='true' declared_type='char **' name='descr' type='^*'/>
+</struct>
+<struct name='PJ_PRIME_MERIDIANS' type='{PJ_PRIME_MERIDIANS=&quot;id&quot;*&quot;defn&quot;*}'>
+<field declared_type='char*' name='id' type='*'/>
+<field declared_type='char*' name='defn' type='*'/>
+</struct>
+<struct name='PJ_UNITS' type='{PJ_UNITS=&quot;id&quot;*&quot;to_meter&quot;*&quot;name&quot;*}'>
+<field declared_type='char*' name='id' type='*'/>
+<field declared_type='char*' name='to_meter' type='*'/>
+<field declared_type='char*' name='name' type='*'/>
+</struct>
+<struct name='PJconsts' type='{PJconsts=&quot;fwd&quot;^?&quot;inv&quot;^?&quot;spc&quot;^?&quot;pfree&quot;^?&quot;descr&quot;*&quot;params&quot;^{ARG_list}&quot;over&quot;i&quot;geoc&quot;i&quot;is_latlong&quot;i&quot;is_geocent&quot;i&quot;a&quot;d&quot;a_orig&quot;d&quot;es&quot;d&quot;es_orig&quot;d&quot;e&quot;d&quot;ra&quot;d&quot;one_es&quot;d&quot;rone_es&quot;d&quot;lam0&quot;d&quot;phi0&quot;d&quot;x0&quot;d&quot;y0&quot;d&quot;k0&quot;d&quot;to_meter&quot;d&quot;fr_meter&quot;d&quot;datum_type&quot;i&quot;datum_params&quot;[7d]&quot;from_greenwich&quot;d&quot;long_wrap_center&quot;d}'>
+<field declared_type='projUV (*)(projUV, struct PJconsts *)' function_pointer='true' name='fwd' type='^?'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='struct PJconsts*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</field>
+<field declared_type='projUV (*)(projUV, struct PJconsts *)' function_pointer='true' name='inv' type='^?'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='struct PJconsts*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</field>
+<field declared_type='void (*)(projUV, struct PJconsts *, struct FACTORS *)' function_pointer='true' name='spc' type='^?'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='struct PJconsts*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<arg declared_type='struct FACTORS*' type='^{FACTORS={DERIVS=dddd}ddddddddi}'/>
+<retval declared_type='void' type='v'/>
+</field>
+<field declared_type='void (*)(struct PJconsts *)' function_pointer='true' name='pfree' type='^?'>
+<arg declared_type='struct PJconsts*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<retval declared_type='void' type='v'/>
+</field>
+<field const='true' declared_type='char*' name='descr' type='*'/>
+<field declared_type='paralist*' name='params' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+<field declared_type='int' name='over' type='i'/>
+<field declared_type='int' name='geoc' type='i'/>
+<field declared_type='int' name='is_latlong' type='i'/>
+<field declared_type='int' name='is_geocent' type='i'/>
+<field declared_type='double' name='a' type='d'/>
+<field declared_type='double' name='a_orig' type='d'/>
+<field declared_type='double' name='es' type='d'/>
+<field declared_type='double' name='es_orig' type='d'/>
+<field declared_type='double' name='e' type='d'/>
+<field declared_type='double' name='ra' type='d'/>
+<field declared_type='double' name='one_es' type='d'/>
+<field declared_type='double' name='rone_es' type='d'/>
+<field declared_type='double' name='lam0' type='d'/>
+<field declared_type='double' name='phi0' type='d'/>
+<field declared_type='double' name='x0' type='d'/>
+<field declared_type='double' name='y0' type='d'/>
+<field declared_type='double' name='k0' type='d'/>
+<field declared_type='double' name='to_meter' type='d'/>
+<field declared_type='double' name='fr_meter' type='d'/>
+<field declared_type='int' name='datum_type' type='i'/>
+<field declared_type='double*' name='datum_params' type='[7d]'/>
+<field declared_type='double' name='from_greenwich' type='d'/>
+<field declared_type='double' name='long_wrap_center' type='d'/>
+</struct>
+<struct name='PW_COEF' type='{PW_COEF=&quot;m&quot;i&quot;c&quot;^d}'>
+<field declared_type='int' name='m' type='i'/>
+<field declared_type='double*' name='c' type='^d'/>
+</struct>
+<struct name='Tseries' type='{_Tseries=&quot;a&quot;{_projUV=&quot;u&quot;d&quot;v&quot;d}&quot;b&quot;{_projUV=&quot;u&quot;d&quot;v&quot;d}&quot;cu&quot;^{PW_COEF}&quot;cv&quot;^{PW_COEF}&quot;mu&quot;i&quot;mv&quot;i&quot;power&quot;i}'>
+<field declared_type='projUV' name='a' type='{_projUV=&quot;u&quot;d&quot;v&quot;d}'/>
+<field declared_type='projUV' name='b' type='{_projUV=&quot;u&quot;d&quot;v&quot;d}'/>
+<field declared_type='struct PW_COEF*' name='cu' type='^{PW_COEF=i^d}'/>
+<field declared_type='struct PW_COEF*' name='cv' type='^{PW_COEF=i^d}'/>
+<field declared_type='int' name='mu' type='i'/>
+<field declared_type='int' name='mv' type='i'/>
+<field declared_type='int' name='power' type='i'/>
+</struct>
+<struct name='geodesic' type='{geodesic=&quot;A&quot;d&quot;LAM1&quot;d&quot;PHI1&quot;d&quot;ALPHA12&quot;d&quot;LAM2&quot;d&quot;PHI2&quot;d&quot;ALPHA21&quot;d&quot;DIST&quot;d&quot;ONEF&quot;d&quot;FLAT&quot;d&quot;FLAT2&quot;d&quot;FLAT4&quot;d&quot;FLAT64&quot;d&quot;ELLIPSE&quot;i}'>
+<field declared_type='double' name='A' type='d'/>
+<field declared_type='double' name='LAM1' type='d'/>
+<field declared_type='double' name='PHI1' type='d'/>
+<field declared_type='double' name='ALPHA12' type='d'/>
+<field declared_type='double' name='LAM2' type='d'/>
+<field declared_type='double' name='PHI2' type='d'/>
+<field declared_type='double' name='ALPHA21' type='d'/>
+<field declared_type='double' name='DIST' type='d'/>
+<field declared_type='double' name='ONEF' type='d'/>
+<field declared_type='double' name='FLAT' type='d'/>
+<field declared_type='double' name='FLAT2' type='d'/>
+<field declared_type='double' name='FLAT4' type='d'/>
+<field declared_type='double' name='FLAT64' type='d'/>
+<field declared_type='int' name='ELLIPSE' type='i'/>
+</struct>
+<struct name='paralist' type='{ARG_list=&quot;next&quot;^{ARG_list}&quot;used&quot;c&quot;param&quot;[1c]}'>
+<field declared_type='struct ARG_list*' name='next' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+<field declared_type='char' name='used' type='c'/>
+<field declared_type='char*' name='param' type='[1c]'/>
+</struct>
+<struct name='projUV' type='{_projUV=&quot;u&quot;d&quot;v&quot;d}'>
+<field declared_type='double' name='u' type='d'/>
+<field declared_type='double' name='v' type='d'/>
+</struct>
+<constant declared_type='char*' name='EMESS_H_ID' type='[33c]'/>
+<constant declared_type='struct geodesic' name='GEODESIC' type='{geodesic=dddddddddddddi}'/>
+<constant declared_type='char*' name='GEODESIC_H_ID' type='[36c]'/>
+<constant declared_type='int' name='PROJ_HEAD' type='i'/>
+<constant declared_type='double' name='del_alpha' type='d'/>
+<constant declared_type='struct EMESS' name='emess_dat' type='{EMESS=**i}'/>
+<constant declared_type='double' name='fr_meter' type='d'/>
+<constant declared_type='int' name='jstring' type='i'/>
+<constant declared_type='int' name='n_S' type='i'/>
+<constant declared_type='int' name='n_alpha' type='i'/>
+<constant declared_type='struct PJ_DATUMS*' name='pj_datums' type='^{PJ_DATUMS=****}'/>
+<constant declared_type='struct PJ_ELLPS*' name='pj_ellps' type='^{PJ_ELLPS=****}'/>
+<constant declared_type='int' name='pj_errno' type='i'/>
+<constant declared_type='struct PJ_LIST*' name='pj_list' type='^{PJ_LIST=*^?^*}'/>
+<constant declared_type='struct PJ_PRIME_MERIDIANS*' name='pj_prime_meridians' type='^{PJ_PRIME_MERIDIANS=**}'/>
+<constant const='true' declared_type='char*' name='pj_release' type='^c'/>
+<constant declared_type='struct PJ_UNITS*' name='pj_units' type='^{PJ_UNITS=***}'/>
+<constant declared_type='double' name='to_meter' type='d'/>
+<string_constant name='PACKAGE' value='proj'/>
+<string_constant name='PACKAGE_BUGREPORT' value='warmerdam@pobox.com'/>
+<string_constant name='PACKAGE_NAME' value='PROJ.4 Projections'/>
+<string_constant name='PACKAGE_STRING' value='PROJ.4 Projections 4.6.0'/>
+<string_constant name='PACKAGE_TARNAME' value='proj'/>
+<string_constant name='PACKAGE_VERSION' value='4.6.0'/>
+<string_constant name='PROJ_LIB' value='PROJ_LIB'/>
+<string_constant name='VERSION' value='4.6.0'/>
+<enum name='DEG_TO_RAD' value='.0174532925199432958'/>
+<enum name='DIR_CHAR' value='47'/>
+<enum name='FORTPI' value='0.78539816339744833'/>
+<enum name='GEOCENT_A_ERROR' value='4'/>
+<enum name='GEOCENT_A_LESS_B_ERROR' value='16'/>
+<enum name='GEOCENT_B_ERROR' value='8'/>
+<enum name='GEOCENT_LAT_ERROR' value='1'/>
+<enum name='GEOCENT_LON_ERROR' value='2'/>
+<enum name='GEOCENT_NO_ERROR' value='0'/>
+<enum name='HALFPI' value='1.5707963267948966'/>
+<enum name='HAVE_DLFCN_H' value='1'/>
+<enum name='HAVE_INTTYPES_H' value='1'/>
+<enum name='HAVE_LIBM' value='1'/>
+<enum name='HAVE_MEMORY_H' value='1'/>
+<enum name='HAVE_STDINT_H' value='1'/>
+<enum name='HAVE_STDLIB_H' value='1'/>
+<enum name='HAVE_STRINGS_H' value='1'/>
+<enum name='HAVE_STRING_H' value='1'/>
+<enum name='HAVE_SYS_STAT_H' value='1'/>
+<enum name='HAVE_SYS_TYPES_H' value='1'/>
+<enum name='HAVE_UNISTD_H' value='1'/>
+<enum name='ID_TAG_MAX' value='50'/>
+<enum name='IS_ANAL_CONV' value='8'/>
+<enum name='IS_ANAL_HK' value='4'/>
+<enum name='IS_ANAL_XL_YL' value='1'/>
+<enum name='IS_ANAL_XP_YP' value='2'/>
+<enum name='MAX_PATH_FILENAME' value='1024'/>
+<enum name='MAX_TAB_ID' value='80'/>
+<enum name='PI' value='3.14159265358979323846'/>
+<enum name='PJD_3PARAM' value='1'/>
+<enum name='PJD_7PARAM' value='2'/>
+<enum name='PJD_ERR_GEOCENTRIC' value='-45'/>
+<enum name='PJD_GRIDSHIFT' value='3'/>
+<enum name='PJD_UNKNOWN' value='0'/>
+<enum name='PJD_WGS84' value='4'/>
+<enum name='PJ_VERSION' value='470'/>
+<enum name='RAD_TO_DEG' value='57.29577951308232'/>
+<enum name='STDC_HEADERS' value='1'/>
+<enum name='TWOPI' value='6.2831853071795864769'/>
+<function name='aacos'>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='aasin'>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='aatan2'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='adjlon'>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='asqrt'>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='bch2bps'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='projUV**' type='^^{?}'/>
+<arg declared_type='int' type='i'/>
+<arg declared_type='int' type='i'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='bcheval'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='Tseries*' type='^{_Tseries={_projUV=dd}{_projUV=dd}^{PW_COEF}^{PW_COEF}iii}'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</function>
+<function name='bchgen'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='int' type='i'/>
+<arg declared_type='int' type='i'/>
+<arg declared_type='projUV**' type='^^{?}'/>
+<arg declared_type='projUV (*)(projUV)' function_pointer='true' type='^?'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</arg>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='biveval'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='Tseries*' type='^{_Tseries={_projUV=dd}{_projUV=dd}^{PW_COEF}^{PW_COEF}iii}'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</function>
+<function name='bpseval'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='Tseries*' type='^{_Tseries={_projUV=dd}{_projUV=dd}^{PW_COEF}^{PW_COEF}iii}'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</function>
+<function name='dmstor'>
+<arg const='true' declared_type='char*' type='*'/>
+<arg declared_type='char**' type='^*'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='emess' variadic='true'>
+<arg declared_type='int' type='i'/>
+<arg declared_type='char*' type='*'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='freev2'>
+<arg declared_type='void**' name='v' type='^^v'/>
+<arg declared_type='int' name='nrows' type='i'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='geod_for'>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='geod_inv'>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='geod_pre'>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='geod_set'>
+<arg declared_type='int' type='i'/>
+<arg declared_type='char**' type='^*'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='hypot'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='mk_cheby'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='projUV*' type='^{_projUV=dd}'/>
+<arg declared_type='projUV (*)(projUV)' function_pointer='true' type='^?'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</arg>
+<arg declared_type='int' type='i'/>
+<arg declared_type='int' type='i'/>
+<arg declared_type='int' type='i'/>
+<retval declared_type='Tseries*' type='^{_Tseries={_projUV=dd}{_projUV=dd}^{PW_COEF}^{PW_COEF}iii}'/>
+</function>
+<function name='nad_ctable_init'>
+<arg declared_type='FILE*' name='fid' type='^{__sFILE=*iiss{__sbuf=*i}i^v^?^?^?^?{__sbuf=*i}^{__sFILEX}i[3C][1C]{__sbuf=*i}iq}'/>
+<retval declared_type='struct CTABLE*' type='^{CTABLE=[80c]{?=dd}{?=dd}{?=ii}^{?}}'/>
+</function>
+<function name='nad_ctable_load'>
+<arg declared_type='struct CTABLE*' type='^{CTABLE=[80c]{?=dd}{?=dd}{?=ii}^{?}}'/>
+<arg declared_type='FILE*' name='fid' type='^{__sFILE=*iiss{__sbuf=*i}i^v^?^?^?^?{__sbuf=*i}^{__sFILEX}i[3C][1C]{__sbuf=*i}iq}'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='nad_cvt'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='int' type='i'/>
+<arg declared_type='struct CTABLE*' type='^{CTABLE=[80c]{?=dd}{?=dd}{?=ii}^{?}}'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</function>
+<function name='nad_free'>
+<arg declared_type='struct CTABLE*' type='^{CTABLE=[80c]{?=dd}{?=dd}{?=ii}^{?}}'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='nad_init'>
+<arg declared_type='char*' type='*'/>
+<retval declared_type='struct CTABLE*' type='^{CTABLE=[80c]{?=dd}{?=dd}{?=ii}^{?}}'/>
+</function>
+<function name='nad_intr'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='struct CTABLE*' type='^{CTABLE=[80c]{?=dd}{?=dd}{?=ii}^{?}}'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</function>
+<function name='pj_Convert_Geocentric_To_Geodetic'>
+<arg declared_type='GeocentricInfo*' name='gi' type='^{_GeocentricInfo=dddddd}'/>
+<arg declared_type='double' name='X' type='d'/>
+<arg declared_type='double' name='Y' type='d'/>
+<arg declared_type='double' name='Z' type='d'/>
+<arg declared_type='double*' name='Latitude' type='^d'/>
+<arg declared_type='double*' name='Longitude' type='^d'/>
+<arg declared_type='double*' name='Height' type='^d'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_Convert_Geodetic_To_Geocentric'>
+<arg declared_type='GeocentricInfo*' name='gi' type='^{_GeocentricInfo=dddddd}'/>
+<arg declared_type='double' name='Latitude' type='d'/>
+<arg declared_type='double' name='Longitude' type='d'/>
+<arg declared_type='double' name='Height' type='d'/>
+<arg declared_type='double*' name='X' type='^d'/>
+<arg declared_type='double*' name='Y' type='^d'/>
+<arg declared_type='double*' name='Z' type='^d'/>
+<retval declared_type='long' type='l' type64='q'/>
+</function>
+<function name='pj_Get_Geocentric_Parameters'>
+<arg declared_type='GeocentricInfo*' name='gi' type='^{_GeocentricInfo=dddddd}'/>
+<arg declared_type='double*' name='a' type='^d'/>
+<arg declared_type='double*' name='b' type='^d'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_Init_Geocentric'>
+<arg declared_type='GeocentricInfo*' name='gi' type='^{_GeocentricInfo=dddddd}'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_Set_Geocentric_Parameters'>
+<arg declared_type='GeocentricInfo*' name='gi' type='^{_GeocentricInfo=dddddd}'/>
+<arg declared_type='double' name='a' type='d'/>
+<arg declared_type='double' name='b' type='d'/>
+<retval declared_type='long' type='l' type64='q'/>
+</function>
+<function name='pj_acquire_lock'>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_angular_units_set'>
+<arg declared_type='paralist*' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+<arg declared_type='PJ*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_apply_gridshift'>
+<arg const='true' declared_type='char*' type='*'/>
+<arg declared_type='int' type='i'/>
+<arg declared_type='long' name='point_count' type='l' type64='q'/>
+<arg declared_type='int' name='point_offset' type='i'/>
+<arg declared_type='double*' name='x' type='^d'/>
+<arg declared_type='double*' name='y' type='^d'/>
+<arg declared_type='double*' name='z' type='^d'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_authlat'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double*' type='^d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='pj_authset'>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double*' type='^d'/>
+</function>
+<function name='pj_cleanup_lock'>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_clear_initcache'>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_clone_paralist'>
+<arg const='true' declared_type='paralist*' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+<retval declared_type='paralist*' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+</function>
+<function name='pj_compare_datums'>
+<arg declared_type='projPJ' name='srcdefn' type='^v'/>
+<arg declared_type='projPJ' name='dstdefn' type='^v'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_dalloc'>
+<arg declared_type='void*' type='^v'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_datum_set'>
+<arg declared_type='paralist*' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+<arg declared_type='PJ*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_datum_transform'>
+<arg declared_type='projPJ' name='src' type='^v'/>
+<arg declared_type='projPJ' name='dst' type='^v'/>
+<arg declared_type='long' name='point_count' type='l' type64='q'/>
+<arg declared_type='int' name='point_offset' type='i'/>
+<arg declared_type='double*' name='x' type='^d'/>
+<arg declared_type='double*' name='y' type='^d'/>
+<arg declared_type='double*' name='z' type='^d'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_deallocate_grids'>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_deriv'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='PJ*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<arg declared_type='struct DERIVS*' type='^{DERIVS=dddd}'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_ell_set'>
+<arg declared_type='paralist*' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+<arg declared_type='double*' type='^d'/>
+<arg declared_type='double*' type='^d'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_enfn'>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double*' type='^d'/>
+</function>
+<function name='pj_factors'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='PJ*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='struct FACTORS*' type='^{FACTORS={DERIVS=dddd}ddddddddi}'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_free'>
+<arg declared_type='projPJ' type='^v'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_fwd'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='projPJ' type='^v'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</function>
+<function name='pj_gauss'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg const='true' declared_type='void*' type='^v'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</function>
+<function name='pj_gauss_ini'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double*' type='^d'/>
+<arg declared_type='double*' type='^d'/>
+<retval declared_type='void*' type='^v'/>
+</function>
+<function name='pj_geocentric_to_geodetic'>
+<arg declared_type='double' name='a' type='d'/>
+<arg declared_type='double' name='es' type='d'/>
+<arg declared_type='long' name='point_count' type='l' type64='q'/>
+<arg declared_type='int' name='point_offset' type='i'/>
+<arg declared_type='double*' name='x' type='^d'/>
+<arg declared_type='double*' name='y' type='^d'/>
+<arg declared_type='double*' name='z' type='^d'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_geodetic_to_geocentric'>
+<arg declared_type='double' name='a' type='d'/>
+<arg declared_type='double' name='es' type='d'/>
+<arg declared_type='long' name='point_count' type='l' type64='q'/>
+<arg declared_type='int' name='point_offset' type='i'/>
+<arg declared_type='double*' name='x' type='^d'/>
+<arg declared_type='double*' name='y' type='^d'/>
+<arg declared_type='double*' name='z' type='^d'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_get_datums_ref'>
+<retval declared_type='struct PJ_DATUMS*' type='^{PJ_DATUMS=****}'/>
+</function>
+<function name='pj_get_def'>
+<arg declared_type='projPJ' type='^v'/>
+<arg declared_type='int' type='i'/>
+<retval declared_type='char*' type='*'/>
+</function>
+<function name='pj_get_ellps_ref'>
+<retval declared_type='struct PJ_ELLPS*' type='^{PJ_ELLPS=****}'/>
+</function>
+<function name='pj_get_errno_ref'>
+<retval declared_type='int*' type='^i'/>
+</function>
+<function name='pj_get_list_ref'>
+<retval declared_type='struct PJ_LIST*' type='^{PJ_LIST=*^?^*}'/>
+</function>
+<function name='pj_get_prime_meridians_ref'>
+<retval declared_type='struct PJ_PRIME_MERIDIANS*' type='^{PJ_PRIME_MERIDIANS=**}'/>
+</function>
+<function name='pj_get_release'>
+<retval const='true' declared_type='char*' type='*'/>
+</function>
+<function name='pj_get_units_ref'>
+<retval declared_type='struct PJ_UNITS*' type='^{PJ_UNITS=***}'/>
+</function>
+<function name='pj_gridinfo_free'>
+<arg declared_type='PJ_GRIDINFO*' type='^{_pj_gi=***i^{CTABLE}^{_pj_gi}^{_pj_gi}}'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_gridinfo_init'>
+<arg const='true' declared_type='char*' type='*'/>
+<retval declared_type='PJ_GRIDINFO*' type='^{_pj_gi=***i^{CTABLE}^{_pj_gi}^{_pj_gi}}'/>
+</function>
+<function name='pj_gridinfo_load'>
+<arg declared_type='PJ_GRIDINFO*' type='^{_pj_gi=***i^{CTABLE}^{_pj_gi}^{_pj_gi}}'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_gridlist_from_nadgrids'>
+<arg const='true' declared_type='char*' type='*'/>
+<arg declared_type='int*' type='^i'/>
+<retval declared_type='PJ_GRIDINFO**' type='^^{_pj_gi}'/>
+</function>
+<function name='pj_init'>
+<arg declared_type='int' type='i'/>
+<arg declared_type='char**' type='^*'/>
+<retval declared_type='projPJ' type='^v'/>
+</function>
+<function name='pj_init_plus'>
+<arg const='true' declared_type='char*' type='*'/>
+<retval declared_type='projPJ' type='^v'/>
+</function>
+<function name='pj_insert_initcache'>
+<arg const='true' declared_type='char*' name='filekey' type='*'/>
+<arg const='true' declared_type='paralist*' name='list' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_inv'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg declared_type='projPJ' type='^v'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</function>
+<function name='pj_inv_gauss'>
+<arg declared_type='projUV' type='{_projUV=dd}'/>
+<arg const='true' declared_type='void*' type='^v'/>
+<retval declared_type='projUV' type='{_projUV=dd}'/>
+</function>
+<function name='pj_inv_mlfn'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double*' type='^d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='pj_is_geocent'>
+<arg declared_type='projPJ' type='^v'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_is_latlong'>
+<arg declared_type='projPJ' type='^v'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_latlong_from_proj'>
+<arg declared_type='projPJ' type='^v'/>
+<retval declared_type='projPJ' type='^v'/>
+</function>
+<function name='pj_malloc'>
+<arg declared_type='size_t' type='L' type64='Q'/>
+<retval declared_type='void*' type='^v'/>
+</function>
+<function name='pj_mkparam'>
+<arg declared_type='char*' type='*'/>
+<retval declared_type='paralist*' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+</function>
+<function name='pj_mlfn'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double*' type='^d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='pj_msfn'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='pj_open_lib'>
+<arg declared_type='char*' type='*'/>
+<arg declared_type='char*' type='*'/>
+<retval declared_type='FILE*' type='^{__sFILE=*iiss{__sbuf=*i}i^v^?^?^?^?{__sbuf=*i}^{__sFILEX}i[3C][1C]{__sbuf=*i}iq}'/>
+</function>
+<function name='pj_param'>
+<arg declared_type='paralist*' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+<arg declared_type='char*' type='*'/>
+<retval declared_type='PVALUE' type='(?=di*)'/>
+</function>
+<function name='pj_phi2'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='pj_pr_list'>
+<arg declared_type='projPJ' type='^v'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_prime_meridian_set'>
+<arg declared_type='paralist*' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+<arg declared_type='PJ*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_qsfn'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='pj_qsfn_'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='PJ*' type='^{PJconsts=^?^?^?^?*^{ARG_list}iiiidddddddddddddddi[7d]dd}'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='pj_release_lock'>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_search_initcache'>
+<arg const='true' declared_type='char*' name='filekey' type='*'/>
+<retval declared_type='paralist*' type='^{ARG_list=^{ARG_list}c[1c]}'/>
+</function>
+<function name='pj_set_finder'>
+<arg const='true' declared_type='char *(*)(char *)' function_pointer='true' type='^?'>
+<arg const='true' declared_type='char*' type='*'/>
+<retval const='true' declared_type='char*' type='*'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_set_searchpath'>
+<arg declared_type='int' name='count' type='i'/>
+<arg const='true' declared_type='char**' name='path' type='^*'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='pj_strerrno'>
+<arg declared_type='int' type='i'/>
+<retval declared_type='char*' type='*'/>
+</function>
+<function name='pj_transform'>
+<arg declared_type='projPJ' name='src' type='^v'/>
+<arg declared_type='projPJ' name='dst' type='^v'/>
+<arg declared_type='long' name='point_count' type='l' type64='q'/>
+<arg declared_type='int' name='point_offset' type='i'/>
+<arg declared_type='double*' name='x' type='^d'/>
+<arg declared_type='double*' name='y' type='^d'/>
+<arg declared_type='double*' name='z' type='^d'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='pj_tsfn'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='pj_zpoly1'>
+<arg declared_type='COMPLEX' type='{_COMPLEX=dd}'/>
+<arg declared_type='COMPLEX*' type='^{_COMPLEX=dd}'/>
+<arg declared_type='int' type='i'/>
+<retval declared_type='COMPLEX' type='{_COMPLEX=dd}'/>
+</function>
+<function name='pj_zpolyd1'>
+<arg declared_type='COMPLEX' type='{_COMPLEX=dd}'/>
+<arg declared_type='COMPLEX*' type='^{_COMPLEX=dd}'/>
+<arg declared_type='int' type='i'/>
+<arg declared_type='COMPLEX*' type='^{_COMPLEX=dd}'/>
+<retval declared_type='COMPLEX' type='{_COMPLEX=dd}'/>
+</function>
+<function name='proj_inv_mdist'>
+<arg declared_type='double' type='d'/>
+<arg const='true' declared_type='void*' type='^v'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='proj_mdist'>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='double' type='d'/>
+<arg const='true' declared_type='void*' type='^v'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='proj_mdist_ini'>
+<arg declared_type='double' type='d'/>
+<retval declared_type='void*' type='^v'/>
+</function>
+<function name='rtodms'>
+<arg declared_type='char*' type='*'/>
+<arg declared_type='double' type='d'/>
+<arg declared_type='int' type='i'/>
+<arg declared_type='int' type='i'/>
+<retval declared_type='char*' type='*'/>
+</function>
+<function name='set_rtodms'>
+<arg declared_type='int' type='i'/>
+<arg declared_type='int' type='i'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='vector1'>
+<arg declared_type='int' type='i'/>
+<arg declared_type='int' type='i'/>
+<retval declared_type='void*' type='^v'/>
+</function>
+<function name='vector2'>
+<arg declared_type='int' type='i'/>
+<arg declared_type='int' type='i'/>
+<arg declared_type='int' type='i'/>
+<retval declared_type='void**' type='^^v'/>
+</function>
+</signatures>
